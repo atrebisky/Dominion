@@ -32,7 +32,10 @@
             this.DeckImage = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.SetupOptions = new System.Windows.Forms.GroupBox();
+            this.EndGame = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DeckImage)).BeginInit();
+            this.SetupOptions.SuspendLayout();
             this.SuspendLayout();
             // 
             // DeckImage
@@ -64,18 +67,40 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.EndTurn_Click);
             // 
+            // SetupOptions
+            // 
+            this.SetupOptions.Controls.Add(this.EndGame);
+            this.SetupOptions.Location = new System.Drawing.Point(1035, 12);
+            this.SetupOptions.Name = "SetupOptions";
+            this.SetupOptions.Size = new System.Drawing.Size(200, 119);
+            this.SetupOptions.TabIndex = 3;
+            this.SetupOptions.TabStop = false;
+            this.SetupOptions.Text = "Setup Options";
+            // 
+            // EndGame
+            // 
+            this.EndGame.Location = new System.Drawing.Point(6, 19);
+            this.EndGame.Name = "EndGame";
+            this.EndGame.Size = new System.Drawing.Size(75, 23);
+            this.EndGame.TabIndex = 0;
+            this.EndGame.Text = "End Game";
+            this.EndGame.UseVisualStyleBackColor = true;
+            this.EndGame.Click += new System.EventHandler(this.EndGame_Click);
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.ClientSize = new System.Drawing.Size(1247, 641);
+            this.Controls.Add(this.SetupOptions);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.DeckImage);
             this.Name = "Game";
             this.Text = "Game";
             ((System.ComponentModel.ISupportInitialize)(this.DeckImage)).EndInit();
+            this.SetupOptions.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -85,5 +110,7 @@
         private System.Windows.Forms.PictureBox DeckImage;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.GroupBox SetupOptions;
+        private System.Windows.Forms.Button EndGame;
     }
 }

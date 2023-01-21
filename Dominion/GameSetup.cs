@@ -21,34 +21,11 @@ namespace Dominion
         //Game Start is clicked
         private void StartGame_Click(object sender, EventArgs e)
         {
-            int numberOfPlayers = ((int)this.NumberOfPlayersSelected.Value);
-            //MessageBox.Show("The number of players selected was: " + numberOfPlayers);
-            CreateCardList();//initate list of cards
-
-            List<Card> playerOneDeck = new List<Card>            
-            {
-                new Card { Name = "Copper" },
-                new Card { Name = "Copper" },
-                new Card { Name = "Copper" },
-                new Card { Name = "Copper" },
-                new Card { Name = "Copper" },
-                new Card { Name = "Copper" },
-                new Card { Name = "Copper" },
-                new Card { Name = "Estate" },
-                new Card { Name = "Estate" },
-                new Card { Name = "Estate" }
-            };
-            //new List<Card> playerTwoDeck = new List<Card>;
-            //new List<Card> playerThreeDeck = new List<Card>;
-            //new List<Card> playerFourDeck = new List<Card>;
-            //new List<Card> playerFiveDeck = new List<Card>;
-            //new List<Card> playerSixDeck = new List<Card>;
-
-            //create starting hands
-            for (int i=1; i<numberOfPlayers; i++)
-            {
-                
-            }
+            //set up game data based on selections
+            GameDataStorage.NumberofPlayers = ((int)this.NumberOfPlayersSelected.Value);
+            //this line below to verify data saved properly
+            //MessageBox.Show("The number of players selected was: " + GameDataStorage.NumberofPlayers); 
+            GameDataStorage.CurrentGameAllCardList = CreateCardList();//initate list of cards
 
             //new game form created
             Game newGame = new Game();
@@ -63,16 +40,16 @@ namespace Dominion
             this.Close();
         }
 
-        //currently just estate and copper
+        //unused at the moment even though its called and created
+        //currently just estate and copper but later this will be used to determine what cards are going to be available
+        //will probably create a separate class for this eventually
         private List<Card> CreateCardList()
         {
-            List<Card> currentCardList = new List<Card>()
+            return new List<Card>()
             {
                 new Card { Name = "Copper" },
                 new Card { Name = "Estate" }
             };
-            return currentCardList;
         }
-
     }
 }

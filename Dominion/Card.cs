@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace Dominion
 {
+    // <summary>
+    // Card object.
+    // Stores all the data of a card
+    // <summary>
     internal class Card
     {
         public string Name { get; set; }
