@@ -18,8 +18,6 @@ namespace Dominion
         {
             InitializeComponent();
 
-            //create a player where it should set up everything for the player
-
             //shuffle cards
             GameDataStorage.playerOne.DeckOfCards = DeckManipulation.Shuffle(GameDataStorage.playerOne.DeckOfCards);
 
@@ -36,12 +34,7 @@ namespace Dominion
             //draw 5 cards
             DeckManipulation.Draw(GameDataStorage.playerOne, 5);
 
-            //right now I am working on just one players having cards shuffled, drawn, and discarded
-            //new List<Card> playerTwoDeck = new List<Card>;
-            //new List<Card> playerThreeDeck = new List<Card>;
-            //new List<Card> playerFourDeck = new List<Card>;
-            //new List<Card> playerFiveDeck = new List<Card>;
-            //new List<Card> playerSixDeck = new List<Card>;
+            //Next step is to end turn, moving cards to discard and drawing 5 new cards
         }
 
         private void BuyPhase_Click(object sender, EventArgs e)
@@ -63,10 +56,9 @@ namespace Dominion
             this.Close();
         }
 
+        //See the hand
         private void SeeHand_Click(object sender, EventArgs e)
         {
-            //test the draw
-            //hand should be the first 5 cards
             string testingHandMessage = "";
             for (int i = 0; i < GameDataStorage.playerOne.HandOfCards.Count(); i++)
             {
@@ -75,6 +67,7 @@ namespace Dominion
             MessageBox.Show("The players hand of cards are: " + testingHandMessage);
         }
 
+        //see the deck
         private void SeeDeck_Click(object sender, EventArgs e)
         {
 
