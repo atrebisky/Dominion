@@ -34,6 +34,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.SetupOptions = new System.Windows.Forms.GroupBox();
             this.EndGame = new System.Windows.Forms.Button();
+            this.SeeHand = new System.Windows.Forms.Button();
+            this.SeeDeck = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DeckImage)).BeginInit();
             this.SetupOptions.SuspendLayout();
             this.SuspendLayout();
@@ -87,12 +89,34 @@
             this.EndGame.UseVisualStyleBackColor = true;
             this.EndGame.Click += new System.EventHandler(this.EndGame_Click);
             // 
+            // SeeHand
+            // 
+            this.SeeHand.Location = new System.Drawing.Point(249, 351);
+            this.SeeHand.Name = "SeeHand";
+            this.SeeHand.Size = new System.Drawing.Size(75, 23);
+            this.SeeHand.TabIndex = 4;
+            this.SeeHand.Text = "See Hand";
+            this.SeeHand.UseVisualStyleBackColor = true;
+            this.SeeHand.Click += new System.EventHandler(this.SeeHand_Click);
+            // 
+            // SeeDeck
+            // 
+            this.SeeDeck.Location = new System.Drawing.Point(37, 301);
+            this.SeeDeck.Name = "SeeDeck";
+            this.SeeDeck.Size = new System.Drawing.Size(75, 23);
+            this.SeeDeck.TabIndex = 5;
+            this.SeeDeck.Text = "See Deck";
+            this.SeeDeck.UseVisualStyleBackColor = true;
+            this.SeeDeck.Click += new System.EventHandler(this.SeeDeck_Click);
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.ClientSize = new System.Drawing.Size(1247, 641);
+            this.Controls.Add(this.SeeDeck);
+            this.Controls.Add(this.SeeHand);
             this.Controls.Add(this.SetupOptions);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -112,5 +136,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox SetupOptions;
         private System.Windows.Forms.Button EndGame;
+        private System.Windows.Forms.Button SeeHand;
+        private System.Windows.Forms.Button SeeDeck;
     }
 }

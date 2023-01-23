@@ -12,7 +12,9 @@ namespace Dominion
     // <summary>
     internal static class GameDataStorage
     {
-        public static int NumberofPlayers;
+        public static int NumberofPlayers { get; set; }
         public static List<Card> CurrentGameAllCardList = new List<Card>();
+        public static Player playerOne = new Player();
+        public static Player playerTwo = new Player();
     }
 }
