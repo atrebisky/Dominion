@@ -18,6 +18,9 @@ namespace Dominion
         {
             InitializeComponent();
 
+            //gamesetup.cs will handle the whole setup so that once this part comes up it will just be reactionary until the game is over
+            //currently using this area to test different parts
+
             //shuffle cards
             GameDataStorage.playerOne.DeckOfCards = DeckManipulation.Shuffle(GameDataStorage.playerOne.DeckOfCards);
 
@@ -31,10 +34,13 @@ namespace Dominion
             MessageBox.Show("The shuffled cards are: " + testingShuffleMessage);
             
 
-            //draw 5 cards
-            DeckManipulation.Draw(GameDataStorage.playerOne, 5);
+            //draw starting hand
+            DeckManipulation.Draw(GameDataStorage.playerOne);
+            DeckManipulation.Draw(GameDataStorage.playerOne);
+            DeckManipulation.Draw(GameDataStorage.playerOne);
+            DeckManipulation.Draw(GameDataStorage.playerOne);
+            DeckManipulation.Draw(GameDataStorage.playerOne);
 
-            //Next step is to end turn, moving cards to discard and drawing 5 new cards
         }
 
         private void BuyPhase_Click(object sender, EventArgs e)
@@ -45,6 +51,18 @@ namespace Dominion
         private void EndTurn_Click(object sender, EventArgs e)
         {
             MessageBox.Show("End Turn clicked");
+
+            //make a method for this, Cards in play and hand go into discard pile and then draw 5 new cards
+            GameDataStorage.playerOne.DiscardPile.AddRange(GameDataStorage.playerOne.CardsInPlay);
+            GameDataStorage.playerOne.DiscardPile.AddRange(GameDataStorage.playerOne.HandOfCards);
+            GameDataStorage.playerOne.CardsInPlay.Clear();
+            GameDataStorage.playerOne.HandOfCards.Clear();
+
+            DeckManipulation.Draw(GameDataStorage.playerOne);
+            DeckManipulation.Draw(GameDataStorage.playerOne);
+            DeckManipulation.Draw(GameDataStorage.playerOne);
+            DeckManipulation.Draw(GameDataStorage.playerOne);
+            DeckManipulation.Draw(GameDataStorage.playerOne);
         }
 
         private void EndGame_Click(object sender, EventArgs e)
@@ -79,6 +97,12 @@ namespace Dominion
             }
 
             MessageBox.Show("Players Deck after Draw: " + testingDeckAfterDraw);
+        }
+
+        private void DrawCard_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Draw Card clicked");
+            DeckManipulation.Draw(GameDataStorage.playerOne);
         }
     }
 }

@@ -36,6 +36,7 @@
             this.EndGame = new System.Windows.Forms.Button();
             this.SeeHand = new System.Windows.Forms.Button();
             this.SeeDeck = new System.Windows.Forms.Button();
+            this.DrawCard = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DeckImage)).BeginInit();
             this.SetupOptions.SuspendLayout();
             this.SuspendLayout();
@@ -109,12 +110,23 @@
             this.SeeDeck.UseVisualStyleBackColor = true;
             this.SeeDeck.Click += new System.EventHandler(this.SeeDeck_Click);
             // 
+            // DrawCard
+            // 
+            this.DrawCard.Location = new System.Drawing.Point(249, 405);
+            this.DrawCard.Name = "DrawCard";
+            this.DrawCard.Size = new System.Drawing.Size(75, 23);
+            this.DrawCard.TabIndex = 6;
+            this.DrawCard.Text = "Draw Card";
+            this.DrawCard.UseVisualStyleBackColor = true;
+            this.DrawCard.Click += new System.EventHandler(this.DrawCard_Click);
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.ClientSize = new System.Drawing.Size(1247, 641);
+            this.Controls.Add(this.DrawCard);
             this.Controls.Add(this.SeeDeck);
             this.Controls.Add(this.SeeHand);
             this.Controls.Add(this.SetupOptions);
@@ -138,5 +150,6 @@
         private System.Windows.Forms.Button EndGame;
         private System.Windows.Forms.Button SeeHand;
         private System.Windows.Forms.Button SeeDeck;
+        private System.Windows.Forms.Button DrawCard;
     }
 }

@@ -13,6 +13,7 @@ namespace Dominion
         public string Name { get; set; }
         public int VictoryPoints { get; set; }
         public List<Card> AllPlayerCards = new List<Card>();
+        public Boolean PlayedAllCardsAlert = false;
 
         //Currently everyone will start with the same 7 copper and 3 estates
         public List<Card> DeckOfCards = new List<Card>
